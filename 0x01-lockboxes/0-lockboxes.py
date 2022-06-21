@@ -19,7 +19,7 @@ def canUnlockAll(boxes):
     for box in boxes:
         for key in box:
             for i in range(len(boxes)):
-                if box != boxes[i] and key == i:
+                if i != 0 and box != boxes[i] and key == i:
                     unlockedKeys.append(key)
     if indexList == list(set(unlockedKeys)):
         return True
