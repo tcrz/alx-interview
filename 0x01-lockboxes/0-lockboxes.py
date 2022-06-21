@@ -14,6 +14,8 @@ Return True if all boxes can be opened, else return False
 
 
 def canUnlockAll(boxes):
+    if (all(isinstance(i, list) for i in boxes) is False):
+        return False
     # list to hold keys
     # the first item of boxes is already unlocked
     keys = [0]
