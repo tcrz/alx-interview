@@ -19,8 +19,6 @@ def canUnlockAll(boxes):
         keys.append(i)
 
     lockedboxes = []
-    indexList = [boxes.index(i) for i in boxes]
-    # print(indexList)
 
     for i in range(len(boxes)):
         if i in keys:
@@ -35,10 +33,7 @@ def canUnlockAll(boxes):
                 keys.append(k)
     # print(list(set(keys)))
 
-    # for i in range(len(boxes)):
-    #     if i not in keys:
-    #         return False
-
-    if indexList != list(set(keys)):
-        return False
+    for i in range(len(boxes)):
+        if i not in keys:
+            return False
     return True
