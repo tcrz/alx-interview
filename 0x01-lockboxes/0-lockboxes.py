@@ -32,7 +32,7 @@ def canUnlockAll(boxes):
         if i in keys:
             for k in boxes[i]:
                 keys.append(k)
-    print(list(set(keys)))
+    # print(list(set(keys)))
 
     for i in range(len(boxes)):
         if i not in keys:
