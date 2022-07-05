@@ -5,18 +5,18 @@ import sys
 
 def split_str(stdin):
     str_list = stdin.split(" ")
-    print(str_list)
+    # print(str_list)
     if len(str_list) != 9:
         return None
     status_code = str_list[-2].replace('\n', '')
     file_size = str_list[-1][:-1]
     # print(file_size)
-    return {'status_code': int(status_code), 'file_size': int(file_size)}
+    return {'status_code': status_code, 'file_size': int(file_size)}
 
 
 if __name__ == '__main__':
     count = 0
-    status_codes = [200, 301, 400, 401, 403, 404, 405, 500]
+    status_codes = ['200', '301', '400', '401', '403', '404', '405', '500']
     status_code_data = {code: 0 for code in status_codes}
     file_size = 0
     try:
