@@ -52,7 +52,7 @@ try:
     for line in sys.stdin:
         count += 1
         splitstr = line.split()
-        if len(splitstr) == 9:
+        if len(splitstr) > 6:
             total_file_size += int(splitstr[-1])
             code = splitstr[-2]
             status_code_data[code] += 1
