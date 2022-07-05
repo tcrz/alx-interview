@@ -5,12 +5,12 @@ import sys
 
 def split_str(stdin):
     str_list = stdin.split()
-    # print(str_list)
-    if len(str_list) > 9:
+    # print(len(str_list))
+    if len(str_list) < 6:
         return None
     status_code = str_list[-2].replace('\n', '')
-    file_size = str_list[-1][:-1]
-    # print(file_size)
+    file_size = str_list[-1]
+    print(file_size)
     return {'status_code': status_code, 'file_size': int(file_size)}
 
 
