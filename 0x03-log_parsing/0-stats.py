@@ -4,9 +4,9 @@ import sys
 
 
 def split_str(stdin):
-    str_list = stdin.split(" ")
+    str_list = stdin.split()
     # print(str_list)
-    if len(str_list) != 9:
+    if len(str_list) > 9:
         return None
     status_code = str_list[-2].replace('\n', '')
     file_size = str_list[-1][:-1]
