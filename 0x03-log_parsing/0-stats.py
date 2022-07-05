@@ -51,7 +51,7 @@ total_file_size = 0
 try:
     for line in sys.stdin:
         splitstr = line.split()
-        if len(splitstr) > 9:
+        if len(splitstr) > 6:
             total_file_size += int(splitstr[-1])
             code = splitstr[-2]
             if code in status_code_data:
