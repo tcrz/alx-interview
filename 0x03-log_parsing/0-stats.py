@@ -19,14 +19,16 @@ try:
         count += 1
         data = split_str(line)
         status_code_data[data['status_code']] += 1
+        sorted_code_data = dict(sorted(status_code_data.items()))
         file_size += data['file_size']
         if count % 10 == 0:
             print('File size:', file_size)
-            for k, v in status_code_data.items():
+            for k, v in sorted_code_data.items():
                 if v != 0:
                     print('{}: {}'.format(k, v))
 except KeyboardInterrupt:
     print('File size: ', file_size)
-    for k, v in status_code_data.items():
+    sorted_code_data = dict(sorted(status_code_data.items()))
+    for k, v in sorted_code_data.items():
         if v != 0:
             print('{}: {}'.format(k, v))
