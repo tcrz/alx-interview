@@ -8,9 +8,9 @@ def split_str(stdin):
     # print(len(str_list))
     if len(str_list) < 6:
         return None
-    status_code = str_list[-2].replace('\n', '')
+    status_code = str_list[-2]
     file_size = str_list[-1]
-    # print(file_size)
+    print(status_code)
     return {'status_code': status_code, 'file_size': int(file_size)}
 
 
