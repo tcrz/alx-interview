@@ -10,7 +10,7 @@ def split_str(stdin):
         return None
     status_code = str_list[-2].replace('\n', '')
     file_size = str_list[-1]
-    print(file_size)
+    # print(file_size)
     return {'status_code': status_code, 'file_size': int(file_size)}
 
 
