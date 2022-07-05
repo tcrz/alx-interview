@@ -22,13 +22,13 @@ try:
         sorted_code_data = dict(sorted(status_code_data.items()))
         file_size += data['file_size']
         if count % 10 == 0:
-            print('File size:', file_size)
+            sys.stdout.write('File size: {}\n'.format(file_size))
             for k, v in sorted_code_data.items():
                 if v != 0:
-                    print('{}: {}'.format(k, v))
+                    sys.stdout.write('{}: {}\n'.format(k, v))
 except KeyboardInterrupt:
-    print('File size: ', file_size)
+    sys.stdout.write('File size: {}\n'.format(file_size))
     sorted_code_data = dict(sorted(status_code_data.items()))
     for k, v in sorted_code_data.items():
         if v != 0:
-            print('{}: {}'.format(k, v))
+            sys.stdout.write('{}: {}\n'.format(k, v))
