@@ -4,12 +4,12 @@ import sys
 
 
 def split_str(stdin):
-    str_list = stdin.split()
-    # print(len(str_list))
+    str_list = stdin.split(" ")
     if len(str_list) != 9:
         return None
     status_code = str_list[-2].replace('\n', '')
     file_size = str_list[-1][:-1]
+    print(file_size)
     return {'status_code': int(status_code), 'file_size': int(file_size)}
 
 
@@ -26,13 +26,13 @@ try:
             sorted_code_data = dict(sorted(status_code_data.items()))
             file_size += data['file_size']
             if count % 10 == 0:
-                print('File size: {}'.format(file_size))
+                sys.stdout.write('File size: {}\n'.format(file_size))
                 for k, v in sorted_code_data.items():
                     if v != 0:
-                        print('{}: {}'.format(k, v))
+                        sys.stdout.write('{}: {}\n'.format(k, v))
 except KeyboardInterrupt:
-    print('File size: {}'.format(file_size))
+    sys.stdout.write('File size: {}\n'.format(file_size))
     sorted_code_data = dict(sorted(status_code_data.items()))
     for k, v in sorted_code_data.items():
         if v != 0:
-            print('{}: {}'.format(k, v))
+            sys.stdout.write('{}: {}\n'.format(k, v))
