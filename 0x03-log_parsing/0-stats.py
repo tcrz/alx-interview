@@ -38,3 +38,9 @@ if __name__ == '__main__':
         for k, v in sorted_code_data.items():
             if v != 0:
                 print('{}: {}'.format(k, v))
+    else:
+        print('File size: {}'.format(file_size))
+        sorted_code_data = dict(sorted(status_code_data.items()))
+        for k, v in sorted_code_data.items():
+            if v != 0:
+                print('{}: {}'.format(k, v))
