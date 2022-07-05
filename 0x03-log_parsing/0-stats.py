@@ -5,12 +5,8 @@ import sys
 
 def split_str(stdin):
     str_list = stdin.split()
-    # print(len(str_list))
-    if len(str_list) < 6:
-        return None
     status_code = str_list[-2]
     file_size = str_list[-1]
-    # print(s)tatus
     return {'status_code': status_code, 'file_size': int(file_size)}
 
 
@@ -22,8 +18,8 @@ if __name__ == '__main__':
     try:
         for line in sys.stdin:
             count += 1
-            data = split_str(line)
-            if data is not None:
+            if len(str_list) < 6:
+                data = split_str(line)
                 status_code_data[data['status_code']] += 1
                 sorted_code_data = dict(sorted(status_code_data.items()))
                 file_size += data['file_size']
