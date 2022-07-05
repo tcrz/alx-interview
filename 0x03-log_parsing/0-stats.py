@@ -50,17 +50,17 @@ count = 0
 total_file_size = 0
 try:
     for line in sys.stdin:
-        count += 1
         splitstr = line.split()
-        if len(splitstr) > 6:
+        if len(splitstr) == 9:
             total_file_size += int(splitstr[-1])
             code = splitstr[-2]
+            count += 1
             status_code_data[code] += 1
-        if count % 10 == 0:
-            print('File size: {}'.format(total_file_size))
-            for k, v in sorted(status_code_data.items()):
-                if v != 0:
-                    print('{}: {}'.format(k, v))
+            if count % 10 == 0:
+                print('File size: {}'.format(total_file_size))
+                for k, v in sorted(status_code_data.items()):
+                    if v != 0:
+                        print('{}: {}'.format(k, v))
 except KeyboardInterrupt:
     print('File size: {}'.format(total_file_size))
     for k, v in sorted(status_code_data.items()):
