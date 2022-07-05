@@ -51,7 +51,6 @@ try:
     count = 0
     for line in sys.stdin:
         splitstr = line.split()
-        print(len(splitstr))
         if len(splitstr) > 6:
             total_file_size += int(splitstr[-1])
             code = splitstr[-2]
@@ -68,7 +67,6 @@ except KeyboardInterrupt:
     for k, v in sorted(status_code_data.items()):
         if v != 0:
             print('{}: {}'.format(k, v))
-    raise
 else:
     print('File size: {}'.format(total_file_size))
     for k, v in sorted(status_code_data.items()):
