@@ -52,12 +52,12 @@ try:
     for line in sys.stdin:
         # print(line)
         splitstr = line.split()
-        if splitstr:
-            total_file_size += int(splitstr[-1])
-            code = splitstr[-2]
-            if code in status_code_data:
-                count += 1
-                status_code_data[code] += 1
+        # if len(splitstr) > 6:
+        total_file_size += int(splitstr[-1])
+        code = splitstr[-2]
+        if code in status_code_data:
+            count += 1
+            status_code_data[code] += 1
             if count % 10 == 0:
                 print('File size: {}'.format(total_file_size))
                 for k, v in sorted(status_code_data.items()):
