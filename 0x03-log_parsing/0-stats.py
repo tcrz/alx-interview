@@ -28,4 +28,8 @@ except KeyboardInterrupt:
         if v != 0:
             print('{}: {}'.format(k, v))
     raise
-
+else:
+    print('File size: {}'.format(total_file_size))
+    for k, v in sorted(status_code_data.items()):
+        if v != 0:
+            print('{}: {}'.format(k, v))
