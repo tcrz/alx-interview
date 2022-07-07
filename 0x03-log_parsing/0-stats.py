@@ -26,7 +26,7 @@ try:
                 status_code_data[code] += 1
                 if count % 10 == 0:
                     print_data(total_file_size, status_code_data)
-        except IndexError:
+        except:
             pass
 except KeyboardInterrupt:
     print_data(total_file_size, status_code_data)
