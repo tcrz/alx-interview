@@ -52,7 +52,7 @@ try:
     for line in sys.stdin:
         # print(line)
         splitstr = line.split()
-        if splitstr:
+        try:
             total_file_size += int(splitstr[-1])
             code = splitstr[-2]
             if code in status_code_data:
@@ -63,6 +63,8 @@ try:
                     for k, v in sorted(status_code_data.items()):
                         if v != 0:
                             print('{}: {}'.format(k, v))
+        except:
+            pass
 except KeyboardInterrupt:
     print('File size: {}'.format(total_file_size))
     for k, v in sorted(status_code_data.items()):
