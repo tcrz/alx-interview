@@ -13,9 +13,13 @@ def validUTF8(data):
                 if bit == '0':
                     break
                 n_bytes += 1
+            if n_bytes == 0:
+                continue
+            if n_bytes == 1 or n_bytes > 4:
+                return False
         else:
             if binary[0] == '0' or binary[1] == '1':
                 return False
 
-            n_bytes -= 1
-        return n_bytes == 0
+        n_bytes -= 1
+    return n_bytes == 0
