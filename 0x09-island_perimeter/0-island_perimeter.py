@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
- Island Perimeter
+Island Perimeter: returns the perimeter of the island
 """
 
 
