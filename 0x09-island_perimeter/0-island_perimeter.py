@@ -5,6 +5,7 @@ Island Perimeter: returns the perimeter of the island
 
 
 def island_perimeter(grid):
+    """island perimenter function"""
     result = 0
     for i in range(len(grid)):
         for j in range(len(grid)):
