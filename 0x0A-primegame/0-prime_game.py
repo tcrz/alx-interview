@@ -25,16 +25,18 @@ def isWinner(x, nums):
     games = []
     ben = 0
     marie = 0
-    for i in nums:
-        games.append([i for i in range(1, i+1)])
-    if x > len(games):
+    if x > len(nums):
         return None
 
+    for i in nums:
+        if i == 0:
+            return None
+        games.append([i for i in range(1, i+1)])
+    print(games)
     for i in range(x):
         count = 0
         for x in range(len(games[i])):
             if isPrime(games[i][x]):
-                num = games[i][x]
                 count += 1
         if count % 2 == 0:
             ben += 1
