@@ -32,7 +32,7 @@ def isWinner(x, nums):
         if i == 0:
             return None
         games.append([i for i in range(1, i+1)])
-    print(games)
+
     for i in range(x):
         count = 0
         for x in range(len(games[i])):
