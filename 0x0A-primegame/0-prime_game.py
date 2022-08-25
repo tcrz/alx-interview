@@ -16,7 +16,6 @@ def removeMultiples(num, num_list):
     """removes multiples of a number in a list"""
     for x in list(num_list):
         if x != num and x % num == 0:
-            # print(x)
             num_list.remove(x)
     return num_list
 
@@ -28,15 +27,14 @@ def isWinner(x, nums):
     marie = 0
     for i in nums:
         games.append([i for i in range(1, i+1)])
-    for i in range(len(games)):
-        for num in list(games[i]):
-            if isPrime(num):
-                games[i] = removeMultiples(num, list(games[i]))
+    if x > len(games):
+        return None
 
     for i in range(x):
         count = 0
         for x in range(len(games[i])):
             if isPrime(games[i][x]):
+                num = games[i][x]
                 count += 1
         if count % 2 == 0:
             ben += 1
