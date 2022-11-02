@@ -22,7 +22,7 @@ def pascal_triangle(n):
         temp = [0] + final_list[x] + [0]
         # Next list to be added to final_list
         new_list = []
-        # Length of the next row (length of the last sublist + 1)
+        # Length of the next row
         for y in range(len(temp) - 1):
             # Necessary addition on values of current row/list and
             # appended to next list/row
